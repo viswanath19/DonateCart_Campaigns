@@ -1,6 +1,6 @@
 import express from 'express';
 import {PORT} from './config';
-import {defaultRouter} from './routes';
+import {defaultRouter,campaignList,activeCampaigns,closedCampaigns} from './routes';
 import path from 'path';
 const app = express();
 
@@ -12,6 +12,9 @@ app.use(express.urlencoded({extended: true}));
 
 //call available vendor and admin routes based on the incoming requests
 app.use('/', defaultRouter);
+app.use('/all', campaignList);
+app.use('/active-campaign',activeCampaigns);
+app.use('/closed-campaign',closedCampaigns);
 
 app.listen(PORT,()=>{
     console.clear();

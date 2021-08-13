@@ -1,10 +1,8 @@
 import express,{Request,Response,NextFunction} from 'express';
-
-
 const router = express();
-
+const axios = require('axios');
 router.get('/',(req:Request,res:Response,next:NextFunction)=>{
-    return res.json({msg:"Hello Initial Route DonateCart Campaings"});
+    res.send("Not Found");
 });
 
 export {router as defaultRouter}
