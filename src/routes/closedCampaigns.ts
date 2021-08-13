@@ -8,7 +8,7 @@ router.get('/',(req:Request,res:Response,next:NextFunction)=>{
     })
     .then(function (response) {
         const campaignList = response.data;
-        const closedCampaign = campaignList.filter((item)=>new Date()>new Date(item.endDate));
+        const closedCampaign = campaignList.filter((item)=>new Date()>new Date(item.endDate) && item.procuredAmount >= item.totalAmount);
         console.log("closedCampaigns count>>>",closedCampaign.length);
         res.send(JSON.stringify(closedCampaign));
     })
