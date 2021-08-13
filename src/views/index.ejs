@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+    <title>
+        DatAccrue | Makeover
+    </title>
+</head>
+<body>
+
+<!--main content start-->
+<main>
+    <section class="main-container">
+        <div class="top-line"></div>
+        <div class="banner-container">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Total Amount</th>
+                    <th>Backers Count</th>
+                    <th>End Date</th>
+                </tr>
+                <% for(let i=0; i < renderData.length; i++) { %>
+                    <tr>
+                      <td><%= renderData[i].title %></td>
+                      <td><%= renderData[i].totalAmount %></td>
+                      <td><%= renderData[i].backersCount %></td>
+                      <td><%= renderData[i].endDate %></td>
+                    </tr>
+                 <% } %>
+            </table>
+        </div>
+    </section>
+</main>
+</body>
+</html>

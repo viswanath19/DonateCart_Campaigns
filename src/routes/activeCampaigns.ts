@@ -12,7 +12,8 @@ router.get('/',(req:Request,res:Response,next:NextFunction)=>{
         const campaignList = response.data;
         const activeCampaign = campaignList.filter((item)=>new Date()<=new Date(item.endDate) && new Date(item.created)>=new Date(priorDate));
         console.log("activeCampaigns count>>>",activeCampaign.length);
-        res.send(JSON.stringify(activeCampaign));
+        //res.send(JSON.stringify(activeCampaign));
+        res.render(process.cwd()+'/src/views/index',{renderData:activeCampaign});
     })
     .catch(function (error) {
         console.log(error);
