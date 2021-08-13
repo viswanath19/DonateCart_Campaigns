@@ -7,6 +7,7 @@ router.get('/',(req:Request,res:Response,next:NextFunction)=>{
         url:"https://testapi.donatekart.com/api/campaign",
     })
     .then(function (response) {
+        console.log("allCampaigns count >>>>",response.data.length);
         res.send(JSON.stringify(response.data));
     })
     .catch(function (error) {

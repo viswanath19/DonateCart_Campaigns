@@ -7,7 +7,10 @@ router.get('/',(req:Request,res:Response,next:NextFunction)=>{
         url:"https://testapi.donatekart.com/api/campaign",
     })
     .then(function (response) {
-        res.send(JSON.stringify(response.data));
+        const campaignList = response.data;
+        const activeCampaign = campaignList.filter((item)=>new Date()<=new Date(item.endDate));
+        console.log("activeCampaigns count>>>",activeCampaign.length);
+        res.send(JSON.stringify(activeCampaign));
     })
     .catch(function (error) {
         console.log(error);
