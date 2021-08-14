@@ -8,6 +8,10 @@
     "start": "node src/index.ts",
     "dev": "nodemon src/index.ts"
   },
+  "engines": {
+    "node": "14.15.2",
+    "npm": "6.14.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viswanath19/DonateCart_Campaigns.git"
