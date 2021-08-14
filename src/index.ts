@@ -1,7 +1,8 @@
-import express from 'express';
+
 import {PORT} from './config';
 import {defaultRouter,campaignList,activeCampaigns,closedCampaigns} from './routes';
 import path from 'path';
+const express = require('express');
 const app = express();
 
 //for handling the incoming request json to destruct and take the params
